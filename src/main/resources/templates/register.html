@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Sign Up - CodeJava</title>
+
+	<style>
+		.header {
+			text-align: center;
+			border-radius: 25px;
+			background: #A9A9A9;
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		.btn-group button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 10px;
+			display: inline-block;
+			font-size: 17px;
+			margin: 4px 20px;
+		}
+
+
+		.btn-group button:hover {
+			background-color: #45a049;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		form {
+			border-radius: 10px;
+			background-color: #f2f2f2;
+			width: 30%;
+			padding: 20px;
+		}
+
+		.form_container {
+			padding-left: 40%
+		}
+
+		body {
+			background-image: url("https://c4.wallpaperflare.com/wallpaper/542/50/545/simple-background-blue-simple-minimalism-wallpaper-preview.jpg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 100% 100%;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div>
+		<h1 class="header">User Registration</h1>
+	</div>
+	<div class="form_container">
+
+		<form th:action="@{/process_register}" th:object="${user}" method="post">
+
+			<label class="col-4 col-form-label">First Name: </label>
+			<input th:field="*{firstName}" type="text" minlength="2" maxlength="20" placeholder="Enter first name"
+				required />
+
+			<label class="col-4 col-form-label">Last Name: </label>
+			<input th:field="*{lastName}" type="text" minlength="2" maxlength="20" placeholder="Enter last name"
+				required />
+
+			<label for="email">E-mail: </label>
+			<input th:field="*{email}" type="email" placeholder="Enter your email" required />
+
+			<label for="password">Password: </label>
+			<input th:field="*{password}" type="password" minlength="6" maxlength="10" placeholder="Enter password"
+				required />
+
+
+			<div class="btn-group">
+				<th><button type="submit">Sign Up</button></th>
+				<th><button onclick="history.back()">Back</button></th>
+			</div>
+
+		</form>
+	</div>
+</body>
+
+</html>

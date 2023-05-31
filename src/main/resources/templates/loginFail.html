@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Sign Up - CodeJava</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <h1>User Login</h1>
+        </div>
+        <form th:action="@{/process_login}" th:object="${user}"
+            method="post" style="max-width: 600px; margin: 0 auto;">
+        
+        <div class="m-3">
+        	<div class="form-group row">
+                <label class="col-8 col-form-label" style="color:red">login fail...! try with correct email and password</label>
+            </div>
+        	
+            <div> 
+	    		<object type="text/html" data="/login" width="735px" height="320px" style="overflow:auto;border:5px ridge blue">
+	    		</object>
+	 		</div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
